@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		*
+		{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			background-color: black;
+			transition: 0.5s;
+		}
+
+		body.active{
+			background-color: white;
+		}
+
+		#toggle{
+			position: relative;
+			display: block;
+			width: 320px;
+			height: 160px;
+			border-radius:160px;
+			background-color: #222;
+			transition: 0.5s ;
+			cursor: pointer;
+		}
+
+		#toggle .active{
+			background-color: #fff;
+		}
+
+		#toggle .indicator{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 160px;
+			height: 160px;
+			background: linear-gradient(to bottom, #444, #222);
+			border-radius: 50%;
+			transform: scale(0.9);
+			transition: 0.5s;
+
+		}
+
+		#toggle.active .indicator{
+			left: 160px;
+		}
+	</style>
+</head>
+<body>
+	
+<div id="toggle">
+	<i class="indicator"></i>
+</div>
+
+<script type="text/javascript">
+	const body = document.querySelector('body');
+	const toggle = document.getElementById('toggle');
+
+	toggle.onclick = function(){
+		toggle.classList.toggle('active')
+		body.classList.toggle('active')
+	}
+
+
+	;
+</script>
+</body>
+</html>
